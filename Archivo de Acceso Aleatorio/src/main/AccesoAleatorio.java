@@ -9,29 +9,17 @@ public class AccesoAleatorio {
 	public static void main(String[] args) {
 
 		try {
-			int tamRegistro = 39;
+			int tamRegistro = 15;
 			byte[] texto = new byte[tamRegistro];
 			RandomAccessFile registro = new RandomAccessFile("persona.txt","rw");
 			System.out.println(registro.length());
 			
-			//registro.read(texto);
-			//System.out.println(new String(texto));
+			registro.read(texto);
+			new String(texto).trim();
+			System.out.println(texto);
 			
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-//ssssdaslkldsasasas
-			
-			registro.seek(0);
-			
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			System.out.println((char) registro.read());
-			
+			registro.read(texto,0,15);
+			System.out.println(new String(texto));
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
