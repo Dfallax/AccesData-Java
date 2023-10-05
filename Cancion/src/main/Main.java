@@ -28,7 +28,7 @@ public class Main {
 		System.out.println("1). Añadir cancion nueva\n2). Borrar cancion\n3). Modificar cancion");
 		Cancion nuevaCancion = new Cancion();
 
-		int id = 1;
+		int id = 0;
 		File canciones = new File("Canciones.txt");
 
 		if (!canciones.exists()) {
@@ -48,12 +48,12 @@ public class Main {
 
 			while ((leer = br.readLine()) != null) {
 				informacion = leer.split(",");
-				ArrayCanciones.add(nuevaCancion = new Cancion(informacion[1], informacion[2], informacion[3],
+				id=Integer.parseInt(informacion[0]);
+				ArrayCanciones.add(nuevaCancion = new Cancion(id,informacion[1], informacion[2], informacion[3],
 						informacion[4], informacion[5]));
-				nuevaCancion.setId(id);
-				id++;
+				
 			}
-
+			id++;
 			br.close();
 			fr.close();
 		} catch (FileNotFoundException e) {
@@ -96,7 +96,7 @@ public class Main {
 
 				FileWriter fwCancion = new FileWriter("Canciones.txt", true);
 				PrintWriter pwCancion = new PrintWriter(fwCancion, true);
-				pwCancion.println(ArrayCanciones.get(id - 1).toString());
+				pwCancion.println(nuevaCancion.toString());
 
 				pwLetra.close();
 				pwCancion.close();
@@ -108,9 +108,8 @@ public class Main {
 			break;
 		case 2:
 			if (ArrayCanciones.size() > 0) {
-				for (int i = 0; i < ArrayCanciones.size(); i++) {
-					System.out.println((i + 1) + "). " + ArrayCanciones.get(i).getTitulo());
-				}
+				MostrarCanciones();
+				
 				int opcion = s.nextInt();
 				letra = new File(ArrayCanciones.get(opcion - 1).getLetra());
 				letra.delete();
@@ -138,16 +137,22 @@ public class Main {
 				}
 
 			} else {
-				System.out.println("No hay ningun registro de canciones y me gusta el kpop");
+				System.out.println("No hay ningun registro de canciones");
 			}
 
 			break;
 		case 3:
 
+			
 			break;
 
 		}
 
+	}
+	private static void MostrarCanciones() {	
+			for (int i = 0; i < ArrayCanciones.size(); i++) {
+				System.out.println((i + 1) + "). " + ArrayCanciones.get(i).getTitulo());	
+		}
 	}
 
 }

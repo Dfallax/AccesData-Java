@@ -19,7 +19,7 @@ public class BuscarMaria {
 			int tamRegistro = 41;//la longitud de los bytes del archivo que se va a leer
 			byte[] texto = new byte[tamRegistro];
 			RandomAccessFile registro = new RandomAccessFile("persona.txt", "rw");
-			System.out.println(registro.length());
+			
 
 			for (int x = 0; x < 4; x++) {	//este for son los saltos de linea que existe el archivo
 				palabra = "";
@@ -39,7 +39,7 @@ public class BuscarMaria {
 						}
 
 					} else {
-//cuando no hay ninguna coincidencia, se rompe el bucle y vuelve al bucle de los saltos de linea
+						//cuando no hay ninguna coincidencia, se rompe el bucle y vuelve al bucle de los saltos de linea
 						break;
 					}
 

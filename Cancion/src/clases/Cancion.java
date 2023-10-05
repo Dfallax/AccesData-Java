@@ -9,7 +9,8 @@ public class Cancion {
 	private String album;
 	private String letra;
 
-	public Cancion(String titulo, String artista, String duracion, String album, String letra) {
+	public Cancion(int id, String titulo, String artista, String duracion, String album, String letra) {
+		this.id=id;
 		this.titulo = titulo;
 		this.artista = artista;
 		this.duracion = duracion;
