@@ -5,7 +5,7 @@ public class Cancion {
 	private int id;
 	private String titulo;
 	private String artista;
-	private String duracion;
+	private int duracion;
 	private String album;
 	private String letra;
 
@@ -13,7 +13,7 @@ public class Cancion {
 		this.id=id;
 		this.titulo = titulo;
 		this.artista = artista;
-		this.duracion = duracion;
+		this.duracion = Integer.parseInt(duracion);
 		this.album = album;
 		this.letra = letra;
 	}
@@ -38,11 +38,11 @@ public class Cancion {
 		this.artista = artista;
 	}
 
-	public String getDuracion() {
+	public int getDuracion() {
 		return duracion;
 	}
 
-	public void setDuracion(String duracion) {
+	public void setDuracion(int duracion) {
 		this.duracion = duracion;
 	}
 
