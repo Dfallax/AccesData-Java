@@ -31,6 +31,7 @@ public class Main {
 
 		int id = 0;
 		File canciones = new File("Canciones.txt");
+		
 
 		if (!canciones.exists()) {
 
@@ -61,6 +62,7 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 
 		switch (s.nextInt()) {
 		case 1:
@@ -83,16 +85,23 @@ public class Main {
 			nuevaCancion.setArtista(datos);
 
 			System.out.print("Duracion: ");
-			do {
-				int duracion = s.nextInt();
-				s.nextLine();
-				if (duracion > 0) {
-					nuevaCancion.setDuracion(duracion);
-					break;
-				} else {
-					System.err.println("Error: Por favor, introduce un número entero válido. Intenta de nuevo.");
-				}
-			} while (true);
+		        do {
+		            try {
+		                
+		                int duracion = s.nextInt();
+		                if (duracion <=0) {
+							throw new InputMismatchException();
+						} 
+						nuevaCancion.setDuracion(duracion);
+		                break;
+		            } catch (InputMismatchException ex) {
+		                System.err.print("ERROR. Dato incorrecto. Intenta de nuevo: ");
+		                
+		            }finally {
+		            	s.nextLine();
+		            }
+		        } while (true);
+		    
 
 			System.out.print("Album: ");
 			while ((datos = s.nextLine()).trim().isEmpty()) {
@@ -152,17 +161,17 @@ public class Main {
 				MostrarCanciones();
 				int opcionCancion = s.nextInt() - 1;
 				boolean continuar = true;
-				while(continuar) {
-				System.out.println("\n\t ¿Que deseas cambiar?");
-				System.out.println("1). Titulo: " + ArrayCanciones.get(opcionCancion).getTitulo());
-				System.out.println("2). Artista: " + ArrayCanciones.get(opcionCancion).getArtista());
-				System.out.println("3). Duracion: " + ArrayCanciones.get(opcionCancion).getDuracion() + " minutos");
-				System.out.println("4). Album: " + ArrayCanciones.get(opcionCancion).getAlbum());
-				System.out.println("5). Letra");
-				
-				int	opcionAtributo=s.nextInt();
-				s.nextLine();
-				
+				while (continuar) {
+					System.out.println("\n\t ¿Que deseas cambiar?");
+					System.out.println("1). Titulo: " + ArrayCanciones.get(opcionCancion).getTitulo());
+					System.out.println("2). Artista: " + ArrayCanciones.get(opcionCancion).getArtista());
+					System.out.println("3). Duracion: " + ArrayCanciones.get(opcionCancion).getDuracion() + " minutos");
+					System.out.println("4). Album: " + ArrayCanciones.get(opcionCancion).getAlbum());
+					System.out.println("5). Letra");
+
+					int opcionAtributo = s.nextInt();
+					s.nextLine();
+
 					continuar = false;
 					switch (opcionAtributo) {
 					case 1:
@@ -171,7 +180,14 @@ public class Main {
 							System.err.print("Error. Introduzca el dato adecuado: ");
 						}
 						ArrayCanciones.get(opcionCancion).setTitulo(datos);
-						// File letra = new File(nuevaCancion.getTitulo() + "_Lyrics.txt");
+				        File oldfile = new File(ArrayCanciones.get(opcionCancion).getLetra());
+				        File newfile = new File("C:\\diego\\IFP\\GitHub\\AccesData-Java\\Cancion\\"+ datos +"_Lyrics.txt");
+				       
+				        if (oldfile.renameTo(newfile)) {
+				            System.out.println("archivo renombrado");
+				        } else {
+				            System.out.println("error");
+				        }
 
 						break;
 					case 2:
@@ -184,19 +200,22 @@ public class Main {
 						break;
 					case 3:
 						System.out.print("Duracion: ");
-
-						do {
-
-							int duracion = s.nextInt();
-							s.nextLine();
-							if (duracion > 0) {
-								ArrayCanciones.get(opcionCancion).setDuracion(duracion);
-								break;
-							} else {
-								System.err.println(
-										"Error: Por favor, introduce un número entero válido. Intenta de nuevo.");
-							}
-						} while (true);
+						 do {
+					            try {
+					                
+					                int duracion = s.nextInt();
+					                if (duracion <=0) {
+										throw new InputMismatchException();
+									} 
+									ArrayCanciones.get(opcionCancion).setDuracion(duracion);
+					                break;
+					            } catch (InputMismatchException ex) {
+					                System.err.print("ERROR. Dato incorrecto. Intenta de nuevo: ");
+					                
+					            }finally {
+					            	s.nextLine();
+					            }
+					        } while (true);
 
 						break;
 					case 4:
@@ -209,7 +228,6 @@ public class Main {
 					case 5:
 						System.out.print("letra: ");
 						try {
-
 							FileWriter fwLetra = new FileWriter(
 									ArrayCanciones.get(opcionCancion).getTitulo() + "_Lyrics.txt");
 							PrintWriter pwLetra = new PrintWriter(fwLetra, true);
@@ -222,28 +240,26 @@ public class Main {
 						break;
 					default:
 						System.err.println("ERROR: opcion erronea. Vuelva a seleccionar");
-						continuar=true;
+						continuar = true;
 					}
-					if(!continuar) {
+					if (!continuar) {
 						System.out.println("¿ Deseas hacer otro cambio ?\n(S/N): ");
-						String decision=s.nextLine();
-						
-						while (decision.trim().isEmpty() || !((decision.toLowerCase().equals("s")) || (decision.toLowerCase().equals("n")))) {
+						String decision = s.nextLine();
+
+						while (decision.trim().isEmpty()
+								|| !((decision.toLowerCase().equals("s")) || (decision.toLowerCase().equals("n")))) {
 							System.err.print("Error. Introduzca el dato adecuado: ");
-							decision=s.nextLine();
+							decision = s.nextLine();
 						}
-						
-						if(decision.toLowerCase().equals("s")) {
+
+						if (decision.toLowerCase().equals("s")) {
 							continuar = true;
 						}
 
 					}
-					
+
 				}
-				
-					
-				 	
-					
+
 			} else {
 				System.out.println("No hay ningun registro de canciones");
 			}
