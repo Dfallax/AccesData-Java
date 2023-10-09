@@ -1,3 +1,0 @@
-2,lolololo,a 2,100,d,C:\diego\IFP\GitHub\AccesData-Java\Cancion\t 2_Lyrics.txt
-4,5,5,5,5,C:\diego\IFP\GitHub\AccesData-Java\Cancion\5_Lyrics.txt
-5,6,6,6,6,C:\diego\IFP\GitHub\AccesData-Java\Cancion\6_Lyrics.txt
