@@ -26,6 +26,7 @@ public class Main {
 			listaPersonas.add(new Persona("Eusebio", "Luna", "623771822"));
 		}
 
+		
 		System.out.println(listaPersonas);
 
 		serializar();
