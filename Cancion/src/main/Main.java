@@ -277,7 +277,7 @@ public class Main {
 			} else {
 				System.out.println("No hay ningun registro de canciones"); // Si no hay ningun registro en el contenido de archivo canciones
 				//se mostrara este mensaje
-			}
+			} 
 			ActualizarCambios();// se eactualiza el archivo canciones despues de que el usuario escogio la opcion "N"
 			break;
 		default:

@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		if (new File("listaPersonas.ser").exists()) {
+		if (new File("listaPersonas.txt").exists()) {
 			System.out.println("Archivo de guardado detectado. Cargando el array...");
 			deserializar();
 		} else {
@@ -32,7 +32,7 @@ public class Main {
 	}
 
 	public static void serializar() {
-		String path = "listaPersonas.ser";
+		String path = "listaPersonas.txt";
 
 		try {
 			FileOutputStream fos = new FileOutputStream(path);
@@ -51,7 +51,7 @@ public class Main {
 	}
 
 	public static void deserializar() {
-		String path = "listaPersonas.ser";
+		String path = "listaPersonas.txt";
 
 		try {
 			FileInputStream fis = new FileInputStream(path);
