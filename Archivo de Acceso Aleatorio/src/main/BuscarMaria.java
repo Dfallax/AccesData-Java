@@ -25,7 +25,6 @@ public class BuscarMaria {
 				palabra = "";
 				registro.seek(tamRegistro * x); //cada vez que el bucle da la vuelta, el resgistro.read leerá en 
 				//el siguiente salto de linea por la variable x
-				
 				for (int i = 0; i < name.length(); i++) { //el bucle sirve para buscar caracter por caracter 
 
 					if ((char) registro.read() == name.charAt(i)) {

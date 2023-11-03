@@ -23,11 +23,12 @@ public class Main {
 			listaPersonas.add(new Persona("María", "García", "912512242"));
 			listaPersonas.add(new Persona("Luis", "Fernández", "652241234"));
 			listaPersonas.add(new Persona("Eusebio", "Luna", "623771822"));
+			serializar();
 		}
 
-		System.out.println(listaPersonas);
+		System.out.println(listaPersonas.get(1).getTelefono());
 
-		serializar();
+		
 	}
 
 	public static void serializar() {

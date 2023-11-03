@@ -19,7 +19,7 @@ public class Compara {
 			//lee todo el archivo y lo guarda en la List
 			lineasArchivo1 = Files.readAllLines(Path.of(path1));
 			lineasArchivo2 = Files.readAllLines(Path.of(path2));
-//toma el numero de lineas que conciden 
+			//toma el numero de lineas que conciden 
 			menosLineas = Math.min(lineasArchivo1.size(), lineasArchivo2.size());
 			System.out.println(menosLineas);
 			

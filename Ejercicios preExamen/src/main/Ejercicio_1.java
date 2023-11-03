@@ -24,7 +24,7 @@ public class Ejercicio_1 {
 				e.printStackTrace();
 			}
 		}
-
+//forma de contar las lineas de un archivo
 		FileReader fr;
 		try {
 			

@@ -14,6 +14,7 @@ public class MainSupermercado {
 		String pathCatalogo = "catalogo.ser";
 		
 		ArrayList<Producto> catalogo = cargarCatalogo(pathCatalogo);
+		
 		ArrayList<ItemCarrito> carrito = new ArrayList<ItemCarrito>();
 		boolean continuarCompra = true;
 		Scanner scanner = new Scanner(System.in);
