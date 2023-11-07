@@ -86,7 +86,13 @@ public class Main_1 {
 		}
 		
 		File xml = new  File("personas_coches.xml");
-		
+		if(!xml.exists()) {
+			try {
+				xml.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		try {
 			FileWriter fr = new FileWriter(xml);
@@ -96,8 +102,9 @@ public class Main_1 {
 			
 			for(int i = 0 ; i< personas.size(); i++) {
 				
-				pw.println("<Persona><id>"+personas.get(i).getId()+"</id><nombre>"
+				pw.println("<persona><id>"+personas.get(i).getId()+"</id><nombre>"
 						+personas.get(i).getNombre()+"</nombre><telefono>"+ personas.get(i).getTelefono()+"</telefono>"+"<vehiculos>");
+				
 				
 				for(int x = 0; x< coches.size(); x++) {
 				if(personas.get(i).getId()==coches.get(x).getIdPropietario().getId()) {
@@ -106,12 +113,11 @@ public class Main_1 {
 					pw.println(coches.get(x).xml());
 
 				}
-				
-				
+						
 				
 				}
 				
-				pw.println("</vehiculos></Persona>");
+				pw.println("</vehiculos></persona>");
 			}
 			
 			fr.close();

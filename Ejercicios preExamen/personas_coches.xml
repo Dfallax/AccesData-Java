@@ -1,20 +1,11 @@
-<Persona><id>15</id><nombre>Juan Lago Aragonés</nombre><telefono>614333622</telefono>
-<vehiculos>
+<persona><id>15</id><nombre>Juan Lago Aragonés</nombre><telefono>614333622</telefono><vehiculos>
 <coche><matricula>1552RTQ</matricula><marca>Audi</marca><modelo>A3</modelo></coche>
 <coche><matricula>9102YQW</matricula><marca>Citroën</marca><modelo>C3</modelo></coche>
-</vehiculos>
-</Persona>
-
-
-<Persona><id>66</id><nombre>Ismael Santos Villa</nombre><telefono>690102325</telefono>
-<vehiculos>
+</vehiculos></persona>
+<persona><id>66</id><nombre>Ismael Santos Villa</nombre><telefono>690102325</telefono><vehiculos>
 <coche><matricula>1042TQA</matricula><marca>Ford</marca><modelo>Focus</modelo></coche>
-</vehiculos>
-</Persona>
-
-<Persona><id>53</id><nombre>María López Sanz</nombre><telefono>671143662</telefono>
-<vehiculos>
+</vehiculos></persona>
+<persona><id>53</id><nombre>María López Sanz</nombre><telefono>671143662</telefono><vehiculos>
 <coche><matricula>7712YYQ</matricula><marca>Audi</marca><modelo>A4</modelo></coche>
 <coche><matricula>2446OPQ</matricula><marca>Dacia</marca><modelo>Duster</modelo></coche>
-</vehiculos>
-</Persona>
+</vehiculos></persona>

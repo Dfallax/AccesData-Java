@@ -48,7 +48,7 @@ public class Main_2 {
 			serializar();
 
 		} else {
-s.nextLine();
+			s.nextLine();
 			System.out.println("Canciones");
 
 			for (int i = 0; i < canciones.size(); i++) {
