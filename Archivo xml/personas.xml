@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas>
+	<persona id="1">
+	  <nombre>Maria</nombre>
+	  <nombre>Tereza</nombre>
+	  <apellidos>
+	    <apellido>Lopez</apellido>
+	    <apellido>Rubio</apellido>
+	  </apellidos>
+	  <nacimiento>09/07/1999</nacimiento>
+	  <ubicacion>
+	    <localidad>Madrid</localidad>
+	    <calle>Alcala</calle>
+	    <numero>125</numero>
+	    <letra>B</letra>
+	  </ubicacion>
+	</persona>
+	<persona id="2">
+	  <nombre>Julian</nombre>
+	  <apellidos>
+	    <apellido>Romero</apellido>
+	    <apellido>Sanz</apellido>
+	  </apellidos>
+	  <nacimiento>12/08/1984</nacimiento>
+	  <ubicacion>
+	    <localidad>Madrid</localidad>
+	    <calle>Encina</calle>
+	    <numero>7</numero>
+	    <letra>A</letra>
+	  </ubicacion>
+	</persona>
+	<persona id="3">
+	  <nombre>Marta</nombre>
+	  <apellidos>
+	    <apellido>Santos</apellido>
+	    <apellido>Rivas</apellido>
+	  </apellidos>
+	  <nacimiento>02/04/2001</nacimiento>
+	  <ubicacion>
+	    <localidad>San Fernando de Henares</localidad>
+	    <calle>J�piter</calle>
+	    <numero>12</numero>
+	    <letra>C</letra>
+	  </ubicacion>
+	</persona>
+	<persona id="4">
+	  <nombre>Martin</nombre>
+	  <apellidos>
+	    <apellido>Jimenez</apellido>
+	    <apellido>Benitez</apellido>
+	  </apellidos>
+	  <nacimiento>1976</nacimiento>
+	  <ubicacion>
+	    <localidad>Mostoles</localidad>
+	    <calle>Ferrocarril</calle>
+	    <numero>4</numero>
+	    <letra>A</letra>
+	  </ubicacion>
+	</persona>
+	<persona id="5">
+	  <nombre>Lucas</nombre>
+	  <apellidos>
+	    <apellido>Medina</apellido>
+	    <apellido>Silva</apellido>
+	  </apellidos>
+	  <nacimiento>03/11/2004</nacimiento>
+	  <ubicacion>
+	    <localidad>Fuenlabrada</localidad>
+	    <calle>Asturias</calle>
+	    <numero>1</numero>
+	    <letra>B</letra>
+	  </ubicacion>
+	</persona>
+	<persona id="6">
+	  <nombre>Ruben</nombre>
+	  <apellidos>
+	    <apellido>Sanchez</apellido>
+	    <apellido>Finca</apellido>
+	  </apellidos>
+	  <nacimiento>30/01/1973</nacimiento>
+	  <ubicacion>
+	    <localidad>Mostoles</localidad>
+	    <calle>Montblanc</calle>
+	    <numero>5</numero>
+	    <letra>E</letra>
+	  </ubicacion>
+	</persona>
+</personas>
