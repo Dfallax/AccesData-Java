@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mascotas>
+<mascota>
+<id>5163</id>
+<nombre>Luna</nombre>
+<especie>Perro</especie>
+<sexo>hembra</sexo>
+<edad>5</edad>
+<historia>
+<cita>
+<fecha>08/10/2018</fecha>
+<motivo>Vacunación</motivo>
+</cita>
+</historia>
+</mascota>
+<mascota>
+<id>58812</id>
+<nombre>Salem</nombre>
+<especie>Gato</especie>
+<sexo>macho</sexo>
+<edad>10</edad>
+<historia>
+<cita>
+<fecha>02/08/2014</fecha>
+<motivo>Vacunación</motivo>
+</cita>
+<cita>
+<fecha>11/06/2019</fecha>
+<motivo>Lesión en la oreja</motivo>
+</cita>
+<cita>
+<fecha>15/11/2022</fecha>
+<motivo>Vacunación</motivo>
+</cita>
+</historia>
+</mascota>
+</mascotas>

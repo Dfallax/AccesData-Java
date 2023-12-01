@@ -20,16 +20,18 @@ public class Main {
 			System.out.println("Archivo de guardado detectado. Cargando el array...");
 			deserializar();
 		} else {
+			
 			System.out.println("Archivo de guardado no encontrado. Generando array...");
 			listaPersonas.add(new Persona("María", "García", "912512242"));
 			listaPersonas.add(new Persona("Luis", "Fernández", "652241234"));
 			listaPersonas.add(new Persona("Eusebio", "Luna", "623771822"));
+			serializar();
 		}
 
 		
 		System.out.println(listaPersonas);
 
-		serializar();
+		
 	}
 
 	public static void serializar() {
