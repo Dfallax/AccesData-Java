@@ -1,9 +1,11 @@
 package main;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -20,8 +22,8 @@ import org.w3c.dom.NodeList;
 public class ejercicio_1 {
 
 	static ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
-	static final String path = "mascotas.txt";
-	static File archivo_txt = new File(path);
+	static final String PATH = "mascotas.txt";
+	static File archivo_txt = new File(PATH);
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -33,10 +35,9 @@ public class ejercicio_1 {
 		Document document;
 		XPath xPath;
 		NodeList nodeList;
-		
-		if(mascotas.isEmpty()) {
-			
-		
+
+		if (!archivo_txt.exists()) {
+
 			try {
 				File archivo = new File(PATH_XML);
 
@@ -70,12 +71,17 @@ public class ejercicio_1 {
 							Integer.parseInt(elemento.getElementsByTagName("edad").item(0).getTextContent()), citas));
 
 				}
+				System.out.println(mascotas.toString());
 				serializar();
-				
+
 			} catch (Exception e) {
 
 			}
-		} 
+		} else {
+
+			deserializar();
+			System.out.println("deserializar: " + mascotas.toString());
+		}
 
 	}
 
@@ -85,7 +91,6 @@ public class ejercicio_1 {
 			FileOutputStream fos = new FileOutputStream(archivo_txt);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-			
 			oos.writeObject(mascotas);
 
 			oos.close();
@@ -93,6 +98,26 @@ public class ejercicio_1 {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void deserializar() {
+
+		try {
+			FileInputStream fis = new FileInputStream(archivo_txt);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			mascotas = (ArrayList<Mascota>) ois.readObject();
+
+			ois.close();
+			fis.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
