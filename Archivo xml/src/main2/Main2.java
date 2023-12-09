@@ -42,14 +42,7 @@ public class Main2 {
 				pw.println("<div><span class='resaltar'>Edad:</span>"+DATOS[4]+"</div>");
 				pw.println("<div class='eliminar'><button onclick='this.parentElement.parentElement.remove();'>Borrar</button></div>");
 				pw.println("</div>");
-				//<div class="persona" id="5123">
-		        //<div class="avatar"><img src="https://www.svgrepo.com/show/61986/avatar.svg"></div>
-		        //<div><span class="resaltar">Nombre:</span> Juan</div>
-		        //<div><span class="resaltar">Apellidos:</span> Fernández López</div>
-		        //<div><span class="resaltar">Edad:</span> 22</div>
-		        //<div class="eliminar"><button onclick="this.parentElement.parentElement.remove();">Borrar</button></div>
-		    //
-						
+				
 				
 			}
 							
