@@ -13,32 +13,34 @@ public class Main {
 
 		try (Connection con = Conexion.open()) {
 			printSQL(con,
-				"SELECT * from magos where nombre = ? and telefono = ?", "Gonzalo", "666777888"
+					"SELECT (p.coste*count(u.unidades)) as costeTotal, m.alias from magos m "
+					+ "inner join pocimas p on m.id = p.id "
+						+ "inner JOIN magos_pocimas u on u.idMago=p.id "
+							+ "GROUP BY m.id ORDER by costeTotal DESC"
+
 			);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
 
 	}
+//SELECT sum(u.unidades), (p.coste*sum(u.unidades)) as costeTotal, m.alias from magos m inner join pocimas p on m.id = p.id inner JOIN magos_pocimas u on u.idMago=p.id GROUP BY m.alias
 
-	public static void printSQL(Connection con, String query, String nombre, String telefono) {
+	public static void printSQL(Connection con, String query) {
 		
 
 		try (PreparedStatement ps = con.prepareStatement(query)) {
-				
-			ps.setString(1, nombre);
-			ps.setString(2, telefono);
+			
 			try (ResultSet rs = ps.executeQuery()) {
 
 				while (rs.next()) {
 					
 					String alias = rs.getString("alias");
-					String telefonos = rs.getString("telefono");
-					
-					
+					float costo = rs.getFloat("costeTotal");
+						
 					System.out.println(
 						"ALIAS: " + alias
-						+ ", UNIDADES: " +telefonos
+						+ ", COSTE: " +costo
 					);
 				}
 
